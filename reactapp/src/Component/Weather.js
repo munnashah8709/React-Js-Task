@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { MdWaves } from 'react-icons/md';
+import Modal from "./Modal";
+import { useNavigate } from "react-router-dom";
 const Weather = () => {
     const [search, setsearch] = useState("")
     const [data, setdata] = useState({});
@@ -61,6 +63,20 @@ const Weather = () => {
     const temperatureKelvin = 290.91;
     const temperatureCelsius = temperatureKelvin - 273.15;
     const temingegree=Math.round(temperatureCelsius);
+
+
+    const [showPopUp, setshowPopUp]=useState(false)
+    const handelPopup=()=>{
+     setshowPopUp(true)
+    }
+    const closeModel=()=>{setshowPopUp(false)}
+
+    const navigate=useNavigate()
+
+    const handeldragDrop=()=>{
+        navigate("/Dragdrop")
+    }
+    
    
     return (
         <>
@@ -93,7 +109,6 @@ const Weather = () => {
             {showhistory ?
                 <>
                     <div id="hist">
-
                         < div >Last 3 City Entries :</div>
                         {
                             history.reverse().slice(0, 3).map((value) => {
@@ -105,9 +120,15 @@ const Weather = () => {
                     </div>
 
                 </> : null}
-
-
                 </div>
+
+
+                <button onClick={handelPopup} style={{marginTop:"300px", backgroundColor:"blue", color:"white", height:"50px"}}>Click for Modal</button>
+                <button onClick={handeldragDrop} style={{marginTop:"300px", backgroundColor:"blue", color:"white", height:"50px"}}> Drag and Drop Interface</button>
+
+                {
+            showPopUp && <Modal closeModel={closeModel} />
+             }
 
         </>
     )

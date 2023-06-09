@@ -76,7 +76,7 @@ function Todoapp() {
           ))}
         </ul>
 
-      <button onClick={submit}>Move to Api Fatch</button>
+      <button onClick={submit} style={{marginTop:"300px", backgroundColor:"blue", color:"white", height:"50px"}}>Move to Api Fatch</button>
 
       </div>
     );
