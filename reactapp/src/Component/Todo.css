@@ -1,0 +1,21 @@
+.App {
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  form {
+    margin-bottom: 20px;
+  }
+  
+  input {
+    padding: 8px;
+    margin-right: 10px;
+  }
+  
+  button {
+    margin-left: 10px;
+  }
+  
+  .completed {
+    text-decoration: line-through;
+  }
