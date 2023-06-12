@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Picture from "../DragDrop/Picture";
 import { useDrop } from "react-dnd";
 import "../DragDrop/dragdrop.css"
+import { useNavigate } from "react-router-dom";
 
 
 const PictureList = [
@@ -25,6 +26,12 @@ const PictureList = [
 function Dragdroplist() {
   const [board, setBoard] = useState([]);
 
+
+  const navigate=useNavigate();
+
+  const handelnavigate=()=>{
+    navigate("/chartinterface")
+}
   const [{ isOver }, drop] = useDrop(() => ({
     accept: "image",
     drop: (item) => addImageToBoard(item.id),
@@ -49,6 +56,9 @@ function Dragdroplist() {
           return <Picture url={picture.url} id={picture.id} />;
         })}
       </div>
+      
+      <button onClick={handelnavigate} style={{marginTop:"100px", backgroundColor:"blue", color:"white", height:"50px"}}>Build an Interactive Chart Component</button>
+
     </>
   );
 }
