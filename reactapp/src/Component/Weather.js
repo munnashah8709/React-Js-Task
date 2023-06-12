@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { MdWaves } from 'react-icons/md';
-import Modal from "./Modal";
+import Modal from "../Component/Modal";
 import { useNavigate } from "react-router-dom";
 const Weather = () => {
     const [search, setsearch] = useState("")

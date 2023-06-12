@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Todoapp from '../Component/Todoapp'
 import Home from '../Component/Home'
 import Weather from '../Component/Weather'
-import DragDropApp from '../Component/DragDropApp'
+import DragDropApp from '../Component/DragDrop/DragDropApp'
 
 function Roustes() {
   return (
